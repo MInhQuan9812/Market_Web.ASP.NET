@@ -1,0 +1,209 @@
+﻿@model IEnumerable<Trasuanhom15.Models.Product>
+
+@{
+    ViewBag.Title = "Sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="productsPage">
+    <div class="page-heading_container">
+        <div class="label">
+            <h2>MENU HIỆN TẠI</h2>
+            <p>Giới thiệu thức uống hấp dẫn và đa dạng từ Gong Cha</p>
+        </div>
+    </div>
+
+    <div class="breadcumbs">
+        <div class="breadcumbs_container">
+            <div class="breadcumbs_nav">
+                <span>
+                    <a href="/Home">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </span>
+                <i class="fa fa-angle-right"></i>
+                <span class="title">Menu hiện tại</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="terms-nav">
+            <div class="terms-nav_container">
+                <div class="terms-nav_inner">
+                    <ul>
+                        <li><a class="scroll-to-top" href="#tudbgc">Thức uống Đặc biệt Gong Cha</a></li>
+                        <li><a class="scroll-to-top" href="#ts">Trà sữa</a></li>
+                        <li><a class="scroll-to-top" href="#tnc">Trà nguyên chất</a></li>
+                        <li><a class="scroll-to-top" href="#tudx">Thức uống đá xay</a></li>
+                        <li><a class="scroll-to-top" href="#tust">Thức uống sáng tạo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="items-products" id="tudbgc">
+            <div class="container">
+                <div class="navbar">
+                    <h2 class="category-heading">Thức uống đặc biệt Gong Cha</h2>
+                </div>
+                <div class="food-item-wrap all">
+                    @foreach (var item in Model)
+                    {
+                        
+                        <div class="food-item">
+                            <a class="item-wrap" href="/Products/Details/@Html.DisplayFor(modelItem => item.ProductID)">
+                                <div class="item-img">
+                                    <div class="img-holder bg-img"
+                                         style="background-image: url(../../Content/images/@item.ImagePro);"></div>
+                                </div>
+                                <div class="item-info">
+                                    <div>
+                                        <h3>
+                                            @Html.DisplayFor(modelItem => item.NamePro)
+                                            
+                                        </h3>
+                                        <span>
+                                            @Html.DisplayFor(modelItem => item.Price)
+                                        </span>
+                                    </div>
+                                    <div class="cart-btn">
+                                        <i class="bx bx-cart">
+                                        </i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+
+        <section class="items-products" id="ts">
+            <div class="container">
+                <div class="navbar">
+                    <h2 class="category-heading">Trà sữa</h2>
+                </div>
+                <div class="food-item-wrap all">
+                    @foreach (var item in Model)
+                    {
+                        <div class="food-item">
+                            <a class="item-wrap"  href="/Products/Details/@Html.DisplayFor(modelItem => item.ProductID)">
+                                <div class="item-img">
+                                    <div class="img-holder bg-img"
+                                         style="background-image: url(../../Content/images/@item.ImagePro);"></div>
+                                </div>
+                                <div class="item-info">
+                                    <div>
+                                        <h3>
+                                            @Html.DisplayFor(modelItem => item.NamePro)
+                                        </h3>
+                                        <span>
+                                            @Html.DisplayFor(modelItem => item.Price)
+                                        </span>
+                                    </div>
+                                    <div class="cart-btn">
+                                        <i class="bx bx-cart">
+                                        </i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+            
+        </section>
+        <section class="items-products" id="tnc">
+            <div class="container">
+                <div class="navbar">
+                    <h2 class="category-heading">Trà nguyên chất</h2>
+                </div>
+                <div class="food-item-wrap all">
+                    @foreach (var item in Model)
+                    {
+                        <div class="food-item">
+                            <a class="item-wrap"  href="/Products/Details/@Html.DisplayFor(modelItem => item.ProductID)">
+                                <div class="item-img">
+                                    <div class="img-holder bg-img"
+                                         style="background-image: url(../../Content/images/@item.ImagePro);"></div>
+                                </div>
+                                <div class="item-info">
+                                    <div>
+                                        <h3>
+                                            @Html.DisplayFor(modelItem => item.NamePro)
+                                        </h3>
+                                        <span>
+                                            @Html.DisplayFor(modelItem => item.Price)
+                                        </span>
+                                    </div>
+                                    <div class="cart-btn">
+                                        <i class="bx bx-cart">
+                                        </i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+
+            </div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DecriptionPro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePro)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category1.NameCate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamePro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecriptionPro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category1.NameCate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
+    }*@
+
+</table>
+
