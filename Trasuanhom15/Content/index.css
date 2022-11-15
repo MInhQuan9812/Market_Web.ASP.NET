@@ -609,8 +609,11 @@ footer {
 .footer {
     color: #171717;
     padding:20px;
-}
-
+/*    background-color:grey;
+*/}
+    .footer h2 {
+        color: darkred;
+    }
 .footer .footer-container{
     position:relative;
     display:flex;
@@ -798,10 +801,104 @@ footer {
     line-height: 1.4;
 }
 
+/*LoginPage SignUp*/
+.login  .container{
+    position:relative;
+/*    background-color:aqua;
+*/    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.login  h2{
+    color:white;
+}
+.login .form {
+    /*    position:absolute;
+*/ background: rgba(black, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+.login  .input{
+    width:80%;
+    margin-bottom:20px;
+    border-radius:5px;
+    border:1px solid;
+    height:40px;
+    padding:4px;
+    display:flex;
+    justify-content:center;
+    background-color:ghostwhite;
+    flex-direction:column;
+}
+.login-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login .input input{
+    width:100%;
+    background-color:transparent;
+    outline:none;
+    border:none;
+}
+    .login .form input:focus {
+        border: none;
+        text-decoration: none; 
+        outline:none;
+    }
+.login button {
+    width: 80%;
+    height: 40px;
+    background-color:var(--primary-color);
+    outline:none;
+    border:none;
+    color:antiquewhite;
+}
+.login button:active{
+    color:white;
+    background-color:darkred;
+}
+.login p{
+    color:white;
+}
+.login a{
+    color:var(--primary-color);
+}
+
+.login h2,p{
+    padding:10px 0 10px 0px;
+}
+.text-danger{
+    color:var(--primary-color);
+}
+/*-------------------------*/
+/*CartPage*/
+.cartPage{
+
+}
+
+.cartPage .container{
+    display:flex;
+    justify-content:center;
+}
+
+.cartPage table,th,tr,td {
+    border:1px solid;
+}
+
+
 /*-----------------------------------------------*/
 /*Responsive*/
 @media only screen and (min-width:1200px) {
-    .menu-wrap, .page-heading_container .label, .breadcumbs_container, .terms-nav_container, .items-products .container, .home .container, #food-menu-section .container {
+    .menu-wrap, .page-heading_container .label, .breadcumbs_container, .terms-nav_container, .items-products .container, .home .container, #food-menu-section .container,.login .container,.cartPage .container {
         width: 1600px;
     }
 
@@ -812,20 +909,23 @@ footer {
 }
 
 @media only screen and (max-width:1199px) {
-    .menu-wrap .page-heading_container .label, .breadcumbs_container, .terms-nav_container, .items-products .container, .home .container, #food-menu-section .container {
+    .menu-wrap .page-heading_container .label, .breadcumbs_container, .terms-nav_container, .items-products .container, .home .container, #food-menu-section .container, .login .container, .cartPage .container {
         width: 1150px;
+    }
+    .singup container{
+
     }
 }
 
 @media only screen and (max-width:992px) {
-    .menu-wrap .page-heading_container .label, .breadcumbs_container, .terms-nav_container, .items-products .container, .home .container, #food-menu-section .container {
+    .menu-wrap .page-heading_container .label, .breadcumbs_container, .terms-nav_container, .items-products .container, .home .container, #food-menu-section .container, .login .container, .cartPage .container {
         width: 970px;
     }
 }
 
 
 @media only screen and (max-width:768px) {
-    .menu-wrap .page-heading_container .label, .breadcumbs_container, .terms-nav_container, .items-products .container, .home .container, #food-menu-section .container {
+    .menu-wrap .page-heading_container .label, .breadcumbs_container, .terms-nav_container, .items-products .container, .home .container, #food-menu-section .container, .login .container, .cartPage .container {
         width: 750px;
     }
 

@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Trasuanhom15.Models;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Trasuanhom15.Controllers
 {
@@ -36,7 +38,7 @@ namespace Trasuanhom15.Controllers
         }
 
         // GET: AdminUsers/Create
-        public ActionResult Create()
+        public ActionResult SignUp()
         {
             return View();
         }
@@ -46,13 +48,13 @@ namespace Trasuanhom15.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,NameUser,RoleUser,PasswordUser")] AdminUser adminUser)
+        public ActionResult SignUp([Bind(Include = "ID,NameUser,RoleUser,PasswordUser")] AdminUser adminUser)
         {
             if (ModelState.IsValid)
             {
                 db.AdminUsers.Add(adminUser);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../Home");
             }
 
             return View(adminUser);
@@ -103,6 +105,10 @@ namespace Trasuanhom15.Controllers
             }
             return View(adminUser);
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
 
         // POST: AdminUsers/Delete/5
         [HttpPost, ActionName("Delete")]
@@ -115,6 +121,25 @@ namespace Trasuanhom15.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login([Bind(Include = "NameUser,PasswordUser")] AdminUser adminUser)
+        {
+            if (ModelState.IsValid)
+            {           
+                var account = db.AdminUsers.FirstOrDefault(x => x.NameUser.Equals(adminUser.NameUser) && x.PasswordUser.Equals(adminUser.PasswordUser));
+                if (account != null)
+                {
+                    return RedirectToAction("../Home");
+                }
+                else
+                {
+                    ViewBag.Message = String.Format("Login Fail");
+                    return View();
+                }
+            }
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -53,29 +53,34 @@
                 <div class="food-item-wrap all">
                     @foreach (var item in Model)
                     {
-                        
+
                         <div class="food-item">
-                            <a class="item-wrap" href="/Products/Details/@Html.DisplayFor(modelItem => item.ProductID)">
-                                <div class="item-img">
-                                    <div class="img-holder bg-img"
-                                         style="background-image: url(../../Content/images/@item.ImagePro);"></div>
-                                </div>
-                                <div class="item-info">
-                                    <div>
-                                        <h3>
-                                            @Html.DisplayFor(modelItem => item.NamePro)
-                                            
-                                        </h3>
-                                        <span>
-                                            @Html.DisplayFor(modelItem => item.Price)
-                                        </span>
+                            <div class="item-wrap">
+                                @*<a href="/Products/Details/@Html.DisplayFor(modelItem=>item.ProductID)">*@
+                                    <div class="item-img">
+                                        <div class="img-holder bg-img"
+                                             style="background-image: url(../../Content/images/@item.ImagePro);"></div>
                                     </div>
-                                    <div class="cart-btn">
-                                        <i class="bx bx-cart">
-                                        </i>
+                                    <div class="item-info">
+                                        <div>
+                                            <a href="/Products/Details/@Html.DisplayFor(modelItem => item.ProductID)">
+                                                <h3>
+                                                    @Html.DisplayFor(modelItem => item.NamePro)
+                                                </h3>
+                                            </a>
+                                            <span>
+                                                @Html.DisplayFor(modelItem => item.Price)
+                                            </span>
+                                        </div>
+                                        <div class="cart-btn">
+                                            <a href="/ShoppingCart/AddToCart/@Html.DisplayFor(modelItem=>item.ProductID)" class="btn btn-danger">
+                                                <i class="bx bx-cart">
+                                                </i>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                @*</a>*@
+                            </div>
                         </div>
                     }
                 </div>
@@ -90,8 +95,9 @@
                 <div class="food-item-wrap all">
                     @foreach (var item in Model)
                     {
-                        <div class="food-item">
-                            <a class="item-wrap"  href="/Products/Details/@Html.DisplayFor(modelItem => item.ProductID)">
+                    <div class="food-item">
+                        <div class="item-wrap">
+                            <a href="/Products/Details/@Html.DisplayFor(modelItem=>item.ProductID)">
                                 <div class="item-img">
                                     <div class="img-holder bg-img"
                                          style="background-image: url(../../Content/images/@item.ImagePro);"></div>
@@ -100,6 +106,7 @@
                                     <div>
                                         <h3>
                                             @Html.DisplayFor(modelItem => item.NamePro)
+
                                         </h3>
                                         <span>
                                             @Html.DisplayFor(modelItem => item.Price)
@@ -112,6 +119,7 @@
                                 </div>
                             </a>
                         </div>
+                    </div>
                     }
                 </div>
             </div>
@@ -125,8 +133,9 @@
                 <div class="food-item-wrap all">
                     @foreach (var item in Model)
                     {
-                        <div class="food-item">
-                            <a class="item-wrap"  href="/Products/Details/@Html.DisplayFor(modelItem => item.ProductID)">
+                    <div class="food-item">
+                        <div class="item-wrap">
+                            <a href="/Products/Details/@Html.DisplayFor(modelItem=>item.ProductID)">
                                 <div class="item-img">
                                     <div class="img-holder bg-img"
                                          style="background-image: url(../../Content/images/@item.ImagePro);"></div>
@@ -135,6 +144,7 @@
                                     <div>
                                         <h3>
                                             @Html.DisplayFor(modelItem => item.NamePro)
+
                                         </h3>
                                         <span>
                                             @Html.DisplayFor(modelItem => item.Price)
@@ -147,6 +157,7 @@
                                 </div>
                             </a>
                         </div>
+                    </div>
                     }
                 </div>
 
@@ -205,5 +216,5 @@
         </tr>
     }*@
 
-</table>
+@*</table>*@
 

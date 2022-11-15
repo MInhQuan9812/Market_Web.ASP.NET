@@ -11,17 +11,13 @@ namespace Trasuanhom15.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-
+    
     public partial class OrderDetail
     {
         public int ID { get; set; }
         public Nullable<int> IDProduct { get; set; }
         public Nullable<int> IDOrder { get; set; }
         public Nullable<int> Quantity { get; set; }
-        [Required]
-
         public Nullable<double> UnitPrice { get; set; }
     
         public virtual OrderPro OrderPro { get; set; }

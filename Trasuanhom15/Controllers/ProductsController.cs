@@ -119,6 +119,23 @@ namespace Trasuanhom15.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        // GET: Products
+        public ActionResult ProductList(string SearchString,double min = double.MinValue, double max = double.MaxValue)
+        {   // Tạo Products và có tham chiếu đến Category
+            var products = db.Products.Include(p => p.Category1);
+            //Tìm kiếm chuỗi truy vấn theo NamePro, nếu chuỗi truy vấn SearchString khác rỗng, null
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                products = products.Where(s => s.NamePro.Contains(SearchString));
+            }
+            // Tìm kiếm chuỗi truy vấn theo đơn giá
+            if (min >= 0 && max > 0)
+            {
+                products = db.Products.OrderByDescending(x => x.Price).Where(p => (double)p.Price >= min && (double)p.Price <= max);
+            }
+
+            return View(products.ToList());
+        }
 
         protected override void Dispose(bool disposing)
         {

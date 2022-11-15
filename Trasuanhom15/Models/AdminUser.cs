@@ -6,17 +6,22 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace Trasuanhom15.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class AdminUser
+    public  class AdminUser
     {
+        [Required]
         public int ID { get; set; }
+        [Required]
         public string NameUser { get; set; }
+        //[Required]
         public string RoleUser { get; set; }
+        [Required]
         public string PasswordUser { get; set; }
     }
 }

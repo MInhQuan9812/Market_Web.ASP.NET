@@ -11,8 +11,7 @@ namespace Trasuanhom15.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,11 +21,7 @@ namespace Trasuanhom15.Models
         }
     
         public int IDCus { get; set; }
-        [Display(Name ="Ten khach hang")]
-        [Required(ErrorMessage ="Ten khach hang khong duoc trong")]
         public string NameCus { get; set; }
-        [Display(Name = "So dien thoai")]
-        [Required(ErrorMessage = "So dien thoai khong duoc trong")]
         public string PhoneCus { get; set; }
         public string EmailCus { get; set; }
     

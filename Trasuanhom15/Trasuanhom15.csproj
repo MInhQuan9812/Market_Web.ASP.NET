@@ -136,12 +136,14 @@
     <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\OrderProesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminUser.cs">
       <DependentUpon>TrasuaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs">
       <DependentUpon>TrasuaModel.tt</DependentUpon>
     </Compile>
@@ -181,16 +183,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\.jpg" />
+    <Content Include="Content\images\1575289742410_GONG-CHA_SM-CITY-BALIWAG.jpg" />
     <Content Include="Content\images\3_1.jpg" />
     <Content Include="Content\images\7kii3yce6ixmx0uxik3_1381_anhtintuc.jpg" />
     <Content Include="Content\images\banner-menu-1900-x-335.jpg" />
     <Content Include="Content\images\Banner-Trang-Chủ-kế-địa-chỉ-CH-800x380-01.jpg" />
     <Content Include="Content\images\CHOCOLATE-TOFFEE-1.png" />
     <Content Include="Content\images\background-tra-sua-doc-dao-ngot-lim-cho-tin-do-me-tra-sua.jpg" />
+    <Content Include="Content\images\cong-troi-da-lat-nemtv-1.jpg" />
     <Content Include="Content\images\cover-web-Genmai-01-scaled.jpg" />
     <Content Include="Content\images\cover-web-lhoàng-kim-01.jpg" />
     <Content Include="Content\images\CộtcờLũngCúnhìntừcao.jpg" />
+    <Content Include="Content\images\GC-Web-1900x335.jpg" />
     <Content Include="Content\images\Hinh-Web-OKINAWA-TRÀ-SỮA.png" />
+    <Content Include="Content\images\in_2740_gong-cha_500x300.png" />
     <Content Include="Content\images\Mango-Milktea.png" />
     <Content Include="Content\images\Okinawa-Milk-Foam-Smoothie.png" />
     <Content Include="Content\images\Strawberry-milk-tea.png" />
@@ -269,7 +275,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\AdminUsers\Create.cshtml" />
+    <Content Include="Views\AdminUsers\SignUp.cshtml" />
     <Content Include="Views\AdminUsers\Delete.cshtml" />
     <Content Include="Views\AdminUsers\Details.cshtml" />
     <Content Include="Views\AdminUsers\Edit.cshtml" />
@@ -299,6 +305,11 @@
     <Content Include="Views\OrderProes\Details.cshtml" />
     <Content Include="Views\OrderProes\Edit.cshtml" />
     <Content Include="Views\OrderProes\Index.cshtml" />
+    <Content Include="Views\Products\ProductList.cshtml" />
+    <Content Include="Views\AdminUsers\Login.cshtml" />
+    <Content Include="Views\ShoppingCart\ShowCart.cshtml" />
+    <Content Include="Views\ShoppingCart\BagCart.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOut_Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

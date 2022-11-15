@@ -1,0 +1,71 @@
+﻿@model Trasuanhom15.Models.AdminUser
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login fullheight bg-img bg-img-fixed align-items-center" style="background-image: url(../../Content/images/in_2740_gong-cha_500x300.png)">
+    <div class="container">
+        <div class="form">
+            <h2>Welcome</h2>
+            <div style="width:100%">
+                @using (Html.BeginForm("Login", "AdminUsers", FormMethod.Post, new { @class = "login-form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    if (@ViewBag.Message != null)
+                    {
+                        <script type="text/javascript">
+                            window.onload = function () {
+                            alert("@ViewBag.Message");
+                            };
+                        </script>
+                    }
+                    <div class="input">
+                        @*<input placeholder="Your email adress" />*@
+                        @Html.EditorFor(model => model.NameUser, new { htmlAttributes = new { placeholder = "User" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.NameUser, "", new { @class = "text-danger" })
+                    <div class="input">
+                        @*<input placeholder="Your password" />*@
+                        @Html.EditorFor(model => model.PasswordUser, new { htmlAttributes = new { placeholder = "Password",type="password" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.PasswordUser, "", new { @class = "text-danger" })
+                    <button type="submit">
+                        LOGIN
+                    </button>
+                }
+                }
+            </div>
+            <p>Not a member?<a href="/AdminUsers/SignUp">SignUp now</a></p>
+        </div>
+    </div>
+</div>
+
+<!--<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Login
+            </div>
+            <div class="card-body">-->
+@*@using (Html.BeginForm("Login", "AdminUsers", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.NameUser)
+        @Html.EditorFor(model => model.NameUser, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PasswordUser)
+            @Html.EditorFor(model => model.PasswordUser, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="form-group">
+            <input type="submit" name="submit" class="btn btn-primary" value="Login" />
+        </div>
+    }*@
+<!--</div>
+        </div>
+    </div>
+</div>-->
