@@ -124,6 +124,13 @@ namespace Trasuanhom15.Controllers
             return RedirectToAction("Index");
         }
 
+        [ChildActionOnly]
+        public PartialViewResult CategoryPartial()
+        {
+            var cateList = db.Categories.ToList();
+            return PartialView(cateList);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

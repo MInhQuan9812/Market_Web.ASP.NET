@@ -8,7 +8,7 @@
 <div class="login fullheight bg-img bg-img-fixed align-items-center" style="background-image: url(../../Content/images/in_2740_gong-cha_500x300.png)">
     <div class="container">
         <div class="form">
-            <h2>Welcome</h2>
+            <h2>ADMIN</h2>
             <div style="width:100%">
                 @using (Html.BeginForm("SignUp", "AdminUsers", FormMethod.Post, new { @class = "login-form" }))
                 {
@@ -25,14 +25,14 @@
 
                     <div class="input">
                         @*<input placeholder="Your email adress" />*@
-                        @Html.EditorFor(model => model.NameUser, new { htmlAttributes = new { placeholder = "User name" } })
+                        @Html.EditorFor(model => model.NameUser, new { htmlAttributes = new { placeholder = "Tên " } })
                     </div>
                     @Html.ValidationMessageFor(model => model.NameUser, "", new { @class = "text-danger" })
 
 
                     <div class="input">
                         @*<input placeholder="Your email adress" />*@
-                        @Html.EditorFor(model => model.RoleUser, new { htmlAttributes = new { placeholder = "Full name" } })
+                        @Html.EditorFor(model => model.RoleUser, new { htmlAttributes = new { placeholder = "Vị trí" } })
                     </div>
                     @Html.ValidationMessageFor(model => model.RoleUser, "", new { @class = "text-danger" })
 

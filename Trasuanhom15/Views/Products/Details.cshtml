@@ -5,10 +5,40 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết</h2>
 
-<div>
-    <h4>Product</h4>
+<div class="details-layout">
+    <div class="container">
+        <div class="wrapper">
+            <div style="width:33%;padding:10px;">
+                <img src="~/Content/images/@Html.DisplayFor(model=>model.ImagePro)" style=" max-width:100%;height:auto;"/>
+            </div>
+            <div style="width: 66%; padding:10px;display:flex;justify-content:space-around;flex-direction:column;">
+                <h3 style="font-size: 23px; font-weight: inherit; line-height: 1.4; color: inherit;">@Html.DisplayFor(model=>model.NamePro)</h3>
+                <div class="about-table">
+                    <h3 style="font-size: 23px; font-weight: inherit; line-height: 1.4; color: inherit;margin-bottom:20px">Thông tin</h3>
+                    <table style="border-color: black; border-collapse: collapse;text-align:center;">
+                        <tbody >
+                            <tr style="" >
+                                <th  style="color: red; border-color: black; padding: 10px">Tên món</th>
+                                <th style="color: red; border-color: black; padding: 10px">Mô tả</th>
+                                <th style="color: red; border-color: black; padding: 10px">Giá</th>
+                            </tr>
+                            <tr>
+                                <th style=" border-color: black; padding: 10px">@Html.DisplayFor(model => model.NamePro)</th>
+                                <th style=" border-color: black; padding: 10px">@Html.DisplayFor(model => model.DecriptionPro)</th>
+                                <th style=" border-color: black; padding: 10px">@Html.DisplayFor(model => model.Price)</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div>*@
+    @*<h4>Sản phẩm</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -54,6 +84,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Quay về", "Index")
+</p>*@

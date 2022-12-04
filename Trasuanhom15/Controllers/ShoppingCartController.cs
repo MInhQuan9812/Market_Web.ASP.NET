@@ -13,7 +13,7 @@ namespace Trasuanhom15.Controllers
     {
         TrasuaDBEntities1 db = new TrasuaDBEntities1();
 
-
+        //Chuan bi 1 cai gio hang
         public ActionResult ShowCart()
         {
             if (Session["Cart"] == null)
@@ -88,6 +88,7 @@ namespace Trasuanhom15.Controllers
                 Cart cart = Session["Cart"] as Cart;
                 OrderPro _order = new OrderPro();
                 _order.DateOrder = DateTime.Now;
+                //Quan trong
                 _order.AddressDeliverry = form["AddressDeliverry"];
                 _order.IDCus = int.Parse(form["CodeCustomer"]);
                 db.OrderProes.Add(_order);

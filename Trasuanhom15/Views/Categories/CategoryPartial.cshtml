@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Trasuanhom15.Models.Category>
+
+
+<ul >
+    @{
+        foreach (var item in Model)
+        {
+            <li class="div-cate">
+                @Html.ActionLink(item.NameCate, "Index", "Products", new { category = item.IDCate }, "")
+            </li>
+        }
+    }
+</ul>
+
+

@@ -13,19 +13,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&family=Poppins:wght@200;300;500;600;700;800;900&family=Roboto:wght@100&display=swap"
           rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" media="screen" href="~/Content/index.css?v=14">
+    <link rel="stylesheet" type="text/css" media="screen" href="~/Content/index.css?v=13">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @Styles.Render("~/content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 
 <body>
+
     <div class="nav">
+
         <div class="menu-wrap">
             <div class="logo">
                 @Html.ActionLink("Royal Tea", "Index", "Home")
             </div>
             <div class="menu h-xs">
+
                 <div class="menu-item">
                     @Html.ActionLink("Trang chủ", "Index", "Home")
                 </div>
@@ -36,20 +39,33 @@
                     @Html.ActionLink("Giới thiệu", "About", "Home")
                 </div>
                 <div class="menu-item">
-                    More
+                    <a >More</a>
+                    <ul>
+                        <li><a href="~/Products/Index">Sản phẩm</a></li>
+                        <li><a href="~/Categories/Index">Loại Sản phẩm</a></li>
+                        <li><a href="~/Customers/Index">Khách hàng</a></li>
+                        <li><a href="~/OrderProes/Index">Đơn hàng</a></li>
+                        <li><a href="~/AdminUsers/Index">Phân quyền</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="right-menu">
+
                 <div class="cart-btn">
                     <a href="/ShoppingCart/BagCart">
                         <i class='bx bxs-cart-alt'></i>
                     </a>
-                    
                 </div>
+
                 <div class="cart-btn">
-                    <a href="/AdminUsers/Login">
-                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                    </a>
+                    @if (Session["User"] != null)
+                    {
+                        <a href="/AdminUsers/Information/@HttpContext.Current.Session["IDCus"].ToString()" style="font-size:12px;">@HttpContext.Current.Session["UserName"].ToString()</a>
+                    }
+                    else
+                    {<a href="/AdminUsers/Login">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        </a>}
                 </div>
             </div>
         </div>
@@ -57,7 +73,11 @@
 
     <div>
         @RenderBody()
-       
+        <a href="#" class="back-to-top">
+            <i class="fa fa fa-angle-double-up">
+            </i>
+        </a>
+        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

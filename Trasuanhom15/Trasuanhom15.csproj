@@ -188,6 +188,7 @@
     <Content Include="Content\images\7kii3yce6ixmx0uxik3_1381_anhtintuc.jpg" />
     <Content Include="Content\images\banner-menu-1900-x-335.jpg" />
     <Content Include="Content\images\Banner-Trang-Chủ-kế-địa-chỉ-CH-800x380-01.jpg" />
+    <Content Include="Content\images\bg-qua-trinh-phat-trien.jpg" />
     <Content Include="Content\images\CHOCOLATE-TOFFEE-1.png" />
     <Content Include="Content\images\background-tra-sua-doc-dao-ngot-lim-cho-tin-do-me-tra-sua.jpg" />
     <Content Include="Content\images\cong-troi-da-lat-nemtv-1.jpg" />
@@ -196,17 +197,27 @@
     <Content Include="Content\images\CộtcờLũngCúnhìntừcao.jpg" />
     <Content Include="Content\images\GC-Web-1900x335.jpg" />
     <Content Include="Content\images\Hinh-Web-OKINAWA-TRÀ-SỮA.png" />
+    <Content Include="Content\images\Hình-CH.jpg" />
+    <Content Include="Content\images\icon1.png" />
+    <Content Include="Content\images\icon2.png" />
+    <Content Include="Content\images\icon3.png" />
+    <Content Include="Content\images\icons8-user-100.png" />
     <Content Include="Content\images\in_2740_gong-cha_500x300.png" />
+    <Content Include="Content\images\lytra-350x441.png" />
     <Content Include="Content\images\Mango-Milktea.png" />
+    <Content Include="Content\images\MINT-CHOCO-DA-XAY.png" />
+    <Content Include="Content\images\MINT-DA-XAY.png" />
     <Content Include="Content\images\Okinawa-Milk-Foam-Smoothie.png" />
     <Content Include="Content\images\Strawberry-milk-tea.png" />
     <Content Include="Content\images\tra-sua-creme-brulee.png" />
     <Content Include="Content\images\Tra-Sua-Dao.png" />
     <Content Include="Content\images\Tra-sua-dolce-tran-chau-HK.png" />
     <Content Include="Content\images\Tra-sua-tran-chau-HK.png" />
+    <Content Include="Content\images\Trà-gạo-rang-4.png" />
     <Content Include="Content\images\Trà-sữa-gạo-rang-1.png" />
     <Content Include="Content\images\Trà-sữa-gạo-rang-okinawa-1.png" />
     <Content Include="Content\images\Trà-sữa-gạo-rang-trân-châu-trắng-2.png" />
+    <Content Include="Content\images\Trà-Bí-Đao-Alisan-2.png" />
     <Content Include="Content\images\Trà-sữa-Chocolate-2.png" />
     <Content Include="Content\images\Trà-sữa-Hokkaido-2.png" />
     <Content Include="Content\images\Trà-sữa-Khoai-môn-2.png" />
@@ -260,7 +271,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\Products\index.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -310,6 +320,8 @@
     <Content Include="Views\ShoppingCart\ShowCart.cshtml" />
     <Content Include="Views\ShoppingCart\BagCart.cshtml" />
     <Content Include="Views\ShoppingCart\CheckOut_Success.cshtml" />
+    <Content Include="Views\AdminUsers\Information.cshtml" />
+    <Content Include="Views\Categories\CategoryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

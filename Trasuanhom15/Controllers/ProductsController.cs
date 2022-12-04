@@ -15,13 +15,31 @@ namespace Trasuanhom15.Controllers
         private TrasuaDBEntities1 db = new TrasuaDBEntities1();
 
         // GET: Products
-        public ActionResult Index()
-        {
+        public ActionResult Index(string category,string SearchString,double min=double.MinValue,double max=double.MaxValue)
+        {   
             var products = db.Products.Include(p => p.Category1);
+
+            if (category == null)
+            {
+                products = db.Products.OrderByDescending(x => x.NamePro);
+            }
+            else
+            {
+                products = db.Products.OrderByDescending(x => x.Category1.IDCate).Where(x => x.Category1.IDCate==category);
+            }
+
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                products = db.Products.OrderByDescending(x => x.ProductID).Where(s => s.NamePro.Contains(SearchString.Trim()));
+            }
+
+            if (min >= 0 && max > 0)
+            {
+                products = db.Products.OrderByDescending(x => x.Price).Where(p => (double)p.Price >= min && (double)p.Price <= max);
+            }
             return View(products.ToList());
         }
-
-        // GET: Products/Details/5
+       
         public ActionResult Details(int? id)
         {
             if (id == null)

@@ -1,0 +1,42 @@
+﻿@model Trasuanhom15.Models.AdminUser
+
+@{
+    ViewBag.Title = "Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="inforPage">
+    <div class="container">
+        <div class="label">
+            <div class="content">
+                <div class="img">
+                    <img src="~/Content/images/icons8-user-100.png" />
+                </div>
+                <div class="wrapper">
+                    <div class="item-info">
+                        <p>ID :</p>
+                        @Html.DisplayFor(model => model.ID)
+                    </div>
+                    <div class="item-info">
+                        <p>Name User :</p>
+                        @Html.DisplayFor(model => model.NameUser)
+                    </div>
+                    <div class="item-info">
+                        <p>Role User :</p>
+                        @Html.DisplayFor(model => model.RoleUser)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex;justify-content:center;">
+            <a href="/AdminUsers/Logout">
+                <div class="logout-btn">
+                    Logout
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+

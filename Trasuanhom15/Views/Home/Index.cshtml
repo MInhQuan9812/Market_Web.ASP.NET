@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Trasuanhom15.Models.Product>
+@{
     ViewBag.Title = "Trang chủ";
 }
 
@@ -117,191 +118,223 @@
                 </div>
                 <div class="food-item-wrap all">
 
-                    <div class="food-item">
-                        <div class="item-wrap">
-                            <div class="item-img">
-                                <div class="img-holder bg-img"
-                                     style="background-image: url(../../Content/images/Trà-sữa-Hokkaido-2.png);"></div>
-                            </div>
-                            <div class="item-info">
-                                <div>
-                                    <h3>
-                                        Instant Milk Tea - Blueberry
-                                    </h3>
-                                    <span>
-                                        120$
-                                    </span>
-                                </div>
-                                <div class="cart-btn">
-                                    <i class="bx bx-cart">
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @foreach (var item in Model)
+                    {
 
-                    <div class="food-item">
-                        <div class="item-wrap">
-                            <div class="item-img">
-                                <div class="img-holder bg-img"
-                                     style="background-image: url(../../Content/images/Trà-sữa-Hokkaido-2.png);"></div>
-                            </div>
-                            <div class="item-info">
-                                <div>
-                                    <h3>
-                                        Instant Milk Tea - Blueberry
-                                    </h3>
-                                    <span>
-                                        120$
-                                    </span>
+                        <div class="food-item">
+                            <div class="item-wrap">
+                                @*<a href="/Products/Details/@Html.DisplayFor(modelItem=>item.ProductID)">*@
+                                <div class="item-img">
+                                    <div class="img-holder bg-img"
+                                         style="background-image: url(../../Content/images/@item.ImagePro);"></div>
                                 </div>
-                                <div class="cart-btn">
-                                    <i class="bx bx-cart">
-                                    </i>
+                                <div class="item-info">
+                                    <div>
+                                        <a href="/Products/Details/@Html.DisplayFor(modelItem => item.ProductID)">
+                                            <h3>
+                                                @Html.DisplayFor(modelItem => item.NamePro)
+                                            </h3>
+                                        </a>
+                                        <span>
+                                            @Html.DisplayFor(modelItem => item.Price)
+                                        </span>
+                                    </div>
+                                    <div class="cart-btn">
+                                        <a href="/ShoppingCart/AddToCart/@Html.DisplayFor(modelItem=>item.ProductID)" class="btn btn-danger">
+                                            <i class="bx bx-cart">
+                                            </i>
+                                        </a>
+                                    </div>
                                 </div>
+                                @*</a>*@
                             </div>
                         </div>
+                    }
+                    @*<div class="food-item">
+            <div class="item-wrap">
+                <div class="item-img">
+                    <div class="img-holder bg-img"
+                         style="background-image: url(../../Content/images/Trà-sữa-Hokkaido-2.png);"></div>
+                </div>
+                <div class="item-info">
+                    <div>
+                        <h3>
+                            Instant Milk Tea - Blueberry
+                        </h3>
+                        <span>
+                            120$
+                        </span>
                     </div>
+                    <div class="cart-btn">
+                        <i class="bx bx-cart">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="food-item">
-                        <div class="item-wrap">
-                            <div class="item-img">
-                                <div class="img-holder bg-img"
-                                     style="background-image: url(../../Content/images/Trà-sữa-Hokkaido-2.png);">
-                                </div>
-                            </div>
-                            <div class="item-info">
-                                <div>
-                                    <h3>
-                                        Instant Milk Tea - Blueberry
-                                    </h3>
-                                    <span>
-                                        120$
-                                    </span>
-                                </div>
-                                <div class="cart-btn">
-                                    <i class="bx bx-cart">
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
+        <div class="food-item">
+            <div class="item-wrap">
+                <div class="item-img">
+                    <div class="img-holder bg-img"
+                         style="background-image: url(../../Content/images/Trà-sữa-Hokkaido-2.png);"></div>
+                </div>
+                <div class="item-info">
+                    <div>
+                        <h3>
+                            Instant Milk Tea - Blueberry
+                        </h3>
+                        <span>
+                            120$
+                        </span>
                     </div>
+                    <div class="cart-btn">
+                        <i class="bx bx-cart">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="food-item">
-                        <div class="item-wrap">
-                            <div class="item-img">
-                                <div class="img-holder bg-img"
-                                     style="background-image: url(../../Content/images/Trà-sữa-Hokkaido-2.png);"></div>
-                            </div>
-                            <div class="item-info">
-                                <div>
-                                    <h3>
-                                        Instant Milk Tea - Blueberry
-                                    </h3>
-                                    <span>
-                                        120$
-                                    </span>
-                                </div>
-                                <div class="cart-btn">
-                                    <i class="bx bx-cart">
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
+        <div class="food-item">
+            <div class="item-wrap">
+                <div class="item-img">
+                    <div class="img-holder bg-img"
+                         style="background-image: url(../../Content/images/Trà-sữa-Hokkaido-2.png);">
                     </div>
+                </div>
+                <div class="item-info">
+                    <div>
+                        <h3>
+                            Instant Milk Tea - Blueberry
+                        </h3>
+                        <span>
+                            120$
+                        </span>
+                    </div>
+                    <div class="cart-btn">
+                        <i class="bx bx-cart">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="food-item">
-                        <div class="item-wrap">
-                            <div class="item-img">
-                                <div class="img-holder bg-img"
-                                     style="background-image: url(../../Content/images/anh-pha-tra-sua-dep_062227481.jpg); "></div>
-                            </div>
-                            <div class="item-info">
-                                <div>
-                                    <h3>
-                                        Instant Milk Tea - Blueberry
-                                    </h3>
-                                    <span>
-                                        120$
-                                    </span>
-                                </div>
-                                <div class="cart-btn">
-                                    <i class="bx bx-cart">
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
+        <div class="food-item">
+            <div class="item-wrap">
+                <div class="item-img">
+                    <div class="img-holder bg-img"
+                         style="background-image: url(../../Content/images/Trà-sữa-Hokkaido-2.png);"></div>
+                </div>
+                <div class="item-info">
+                    <div>
+                        <h3>
+                            Instant Milk Tea - Blueberry
+                        </h3>
+                        <span>
+                            120$
+                        </span>
                     </div>
+                    <div class="cart-btn">
+                        <i class="bx bx-cart">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="food-item">
-                        <div class="item-wrap">
-                            <div class="item-img">
-                                <div class="img-holder bg-img"
-                                     style="background-image: url(../../Content/images/anh-pha-tra-sua-dep_062227481.jpg);"></div>
-                            </div>
-                            <div class="item-info">
-                                <div>
-                                    <h3>
-                                        Instant Milk Tea - Blueberry
-                                    </h3>
-                                    <span>
-                                        120$
-                                    </span>
-                                </div>
-                                <div class="cart-btn">
-                                    <i class="bx bx-cart">
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
+        <div class="food-item">
+            <div class="item-wrap">
+                <div class="item-img">
+                    <div class="img-holder bg-img"
+                         style="background-image: url(../../Content/images/anh-pha-tra-sua-dep_062227481.jpg); "></div>
+                </div>
+                <div class="item-info">
+                    <div>
+                        <h3>
+                            Instant Milk Tea - Blueberry
+                        </h3>
+                        <span>
+                            120$
+                        </span>
                     </div>
+                    <div class="cart-btn">
+                        <i class="bx bx-cart">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="food-item">
-                        <div class="item-wrap">
-                            <div class="item-img">
-                                <div class="img-holder bg-img"
-                                     style="background-image: url(../../Content/images/anh-pha-tra-sua-dep_062227481.jpg);"></div>
-                            </div>
-                            <div class="item-info">
-                                <div>
-                                    <h3>
-                                        Instant Milk Tea - Blueberry
-                                    </h3>
-                                    <span>
-                                        120$
-                                    </span>
-                                </div>
-                                <div class="cart-btn">
-                                    <i class="bx bx-cart">
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
+        <div class="food-item">
+            <div class="item-wrap">
+                <div class="item-img">
+                    <div class="img-holder bg-img"
+                         style="background-image: url(../../Content/images/anh-pha-tra-sua-dep_062227481.jpg);"></div>
+                </div>
+                <div class="item-info">
+                    <div>
+                        <h3>
+                            Instant Milk Tea - Blueberry
+                        </h3>
+                        <span>
+                            120$
+                        </span>
                     </div>
+                    <div class="cart-btn">
+                        <i class="bx bx-cart">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="food-item">
-                        <div class="item-wrap">
-                            <div class="item-img">
-                                <div class="img-holder bg-img"
-                                     style="background-image: url(../../Content/images/anh-pha-tra-sua-dep_062227481.jpg);">
-                                </div>
-                            </div>
-                            <div class="item-info">
-                                <div>
-                                    <h3>
-                                        Instant Milk Tea - Blueberry
-                                    </h3>
-                                    <span>
-                                        120$
-                                    </span>
-                                </div>
-                                <div class="cart-btn">
-                                    <i class="bx bx-cart">
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
+        <div class="food-item">
+            <div class="item-wrap">
+                <div class="item-img">
+                    <div class="img-holder bg-img"
+                         style="background-image: url(../../Content/images/anh-pha-tra-sua-dep_062227481.jpg);"></div>
+                </div>
+                <div class="item-info">
+                    <div>
+                        <h3>
+                            Instant Milk Tea - Blueberry
+                        </h3>
+                        <span>
+                            120$
+                        </span>
                     </div>
+                    <div class="cart-btn">
+                        <i class="bx bx-cart">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <div class="item-wrap">
+                <div class="item-img">
+                    <div class="img-holder bg-img"
+                         style="background-image: url(../../Content/images/anh-pha-tra-sua-dep_062227481.jpg);">
+                    </div>
+                </div>
+                <div class="item-info">
+                    <div>
+                        <h3>
+                            Instant Milk Tea - Blueberry
+                        </h3>
+                        <span>
+                            120$
+                        </span>
+                    </div>
+                    <div class="cart-btn">
+                        <i class="bx bx-cart">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>*@
                 </div>
 
             </div>
@@ -311,64 +344,63 @@
 </section>
 
 <footer id="more" class="footer" style="background-image:url(../../Content/images/GC-Web-1900x335.jpg)">
-        <div style="z-index: 1; background: rgba(0, 0, 0, 0.1); ">
-            <div class="footer-container">
-                <div class="noi-dung about ">
-                    <h2>Về Chúng Tôi</h2>
-                    <p>Biết nói gì đây...</p>
-                    <ul class="social-icon">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                        <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-                </div>
-
-                <div class="noi-dung links ">
-                    <h2>Đường Dẫn</h2>
-                    <ul>
-                        <li><a href="/Home">Trang Chủ</a></li>
-                        <li><a href="/Home/about">Về Chúng Tôi</a></li>
-                        <li><a href="#">Thông Tin Liên Lạc</a></li>
-                        <li><a href="#">Dịch Vụ</a></li>
-                        <li><a href="#">Điều Kiện Chính Sách</a></li>
-                    </ul>
-                </div>
-
-                <div class="noi-dung contact ">
-                    <h2>Thông Tin Liên Hệ</h2>
-                    <ul class="info">
-                        <li>
-                            <span><i class="fa fa-map-marker"></i></span>
-                            <span>
-                                Đường Số 1<br />
-                                Quận 1, Thành Phố Hồ Chí Minh<br />
-                                Việt Nam
-                            </span>
-                        </li>
-                        <li>
-                            <span><i class="fa fa-phone"></i></span>
-                            <p>
-                                <a href="#">+84 123 456 789</a>
-                                <br />
-                                <a href="#">+84 987 654 321</a>
-                            </p>
-                        </li>
-                        <li>
-                            <span><i class="fa fa-envelope"></i></span>
-                            <p><a href="#">diachiemail@gmail.com</a></p>
-                        </li>
-                        <li>
-                            <form class="form">
-                                <input type="email" class="form__field" placeholder="Đăng Ký Subscribe Email" />
-                                <button type="button" class="btn btn--primary  uppercase">Gửi</button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-
+    <div style="z-index: 1; background: rgba(0, 0, 0, 0.1); ">
+        <div class="footer-container">
+            <div class="noi-dung about ">
+                <h2>Về Chúng Tôi</h2>
+                <p>Biết nói gì đây...</p>
+                <ul class="social-icon">
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                </ul>
             </div>
-        </div>
-    </footer>
-<!--END FOOD MENU SECTION-->
 
+            <div class="noi-dung links ">
+                <h2>Đường Dẫn</h2>
+                <ul>
+                    <li><a href="/Home">Trang Chủ</a></li>
+                    <li><a href="/Home/about">Về Chúng Tôi</a></li>
+                    <li><a href="#">Thông Tin Liên Lạc</a></li>
+                    <li><a href="#">Dịch Vụ</a></li>
+                    <li><a href="#">Điều Kiện Chính Sách</a></li>
+                </ul>
+            </div>
+
+            <div class="noi-dung contact ">
+                <h2>Thông Tin Liên Hệ</h2>
+                <ul class="info">
+                    <li>
+                        <span><i class="fa fa-map-marker"></i></span>
+                        <span>
+                            Đường Số 1<br />
+                            Quận 1, Thành Phố Hồ Chí Minh<br />
+                            Việt Nam
+                        </span>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-phone"></i></span>
+                        <p>
+                            <a href="#">+84 123 456 789</a>
+                            <br />
+                            <a href="#">+84 987 654 321</a>
+                        </p>
+                    </li>
+                    <li>
+                        <span><i class="fa fa-envelope"></i></span>
+                        <p><a href="#">diachiemail@gmail.com</a></p>
+                    </li>
+                    <li>
+                        <form class="form">
+                            <input type="email" class="form__field" placeholder="Đăng Ký Subscribe Email" />
+                            <button type="button" class="btn btn--primary  uppercase">Gửi</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!--END FOOD MENU SECTION-->

@@ -130,6 +130,9 @@ namespace Trasuanhom15.Controllers
                 var account = db.AdminUsers.FirstOrDefault(x => x.NameUser.Equals(adminUser.NameUser) && x.PasswordUser.Equals(adminUser.PasswordUser));
                 if (account != null)
                 {
+                    Session["IDCus"] = account.ID;
+                    Session["UserName"]=adminUser.NameUser;
+                    Session["Password"] = adminUser.PasswordUser;
                     return RedirectToAction("../Home");
                 }
                 else
@@ -140,6 +143,30 @@ namespace Trasuanhom15.Controllers
             }
             return View();
         }
+
+        public ActionResult Information(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            AdminUser adminUser = db.AdminUsers.Find(id);
+            if (adminUser == null)
+            {
+                return HttpNotFound();
+            }
+            return View(adminUser);
+        }
+        public ActionResult Logout()
+        {
+            Session["User"] = null;
+            Session["IDCus"] = null;
+            Session["Password"] = null;
+            return RedirectToAction("../Home");
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

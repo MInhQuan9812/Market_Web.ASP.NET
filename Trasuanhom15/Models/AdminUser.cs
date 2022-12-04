@@ -16,6 +16,7 @@ namespace Trasuanhom15.Models
     public  class AdminUser
     {
         [Required]
+        //So dien thoai
         public int ID { get; set; }
         [Required]
         public string NameUser { get; set; }

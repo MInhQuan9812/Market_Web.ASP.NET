@@ -43,14 +43,16 @@
                         </tr>
                     }
                 </tbody>
+
                 <tfoot>
                     <tr>
                         <td colspan="5" style="text-align:right; font-size:x-large; color: crimson;">
                             Tổng tiền : @Model.Total_money().ToString("#,##0").Replace(',', '.') Đồng
                         </td>
                     </tr>
+
                     <tr>
-                        <td colspan="2"></td>
+                        <td colspan="2"><a href="/Products" style="color: red; border: 1px solid; border-radius: 3px; display: inline-block; margin: 10px; padding: 5px;">Tiếp tục mua hàng</a></td>
                         <td colspan="4">
                             @using (Html.BeginForm("CheckOut", "ShoppingCart"))
                             {
